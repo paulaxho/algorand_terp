@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "algorand_cross_border-contracts"
+name = "FORT-contracts"
 version = "0.1.0"
 description = "Algorand smart contracts"
 authors = ["Erblin Xhabafti <erb.xhabafti@gmail.com>"]

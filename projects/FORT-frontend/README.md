@@ -1,4 +1,4 @@
-# algorand_cross_border-frontend
+# FORT-frontend
 
 This starter React project has been generated using AlgoKit. See below for default getting started instructions.
 

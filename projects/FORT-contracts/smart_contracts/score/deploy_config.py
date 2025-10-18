@@ -7,16 +7,16 @@ logger = logging.getLogger(__name__)
 
 # define deployment behaviour based on supplied app spec
 def deploy() -> None:
-    from smart_contracts.artifacts.cross_border_payment.cross_border_payment_client import (
+    from smart_contracts.artifacts.score.score_client import (
         HelloArgs,
-        CrossBorderPaymentFactory,
+        ScoreFactory,
     )
 
     algorand = algokit_utils.AlgorandClient.from_environment()
     deployer_ = algorand.account.from_environment("DEPLOYER")
 
     factory = algorand.client.get_typed_app_factory(
-        CrossBorderPaymentFactory, default_sender=deployer_.address
+        ScoreFactory, default_sender=deployer_.address
     )
 
     app_client, result = factory.deploy(

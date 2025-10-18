@@ -11,7 +11,7 @@ path = ".algokit/generators/create_env_file"
 
 [project]
 type = 'contract'
-name = 'algorand_cross_border-contracts'
+name = 'FORT-contracts'
 artifacts = 'smart_contracts/artifacts'
 
 [project.deploy]
