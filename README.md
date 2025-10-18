@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # algorand_terp
 
 Welcome to your new AlgoKit project!
@@ -20,3 +21,6 @@ To get started execute:
 2. `algokit init` - invoke this command inside a github codespace to launch an interactive wizard to guide you through the process of creating a new AlgoKit project
 
 Powered by [Copier templates](https://copier.readthedocs.io/en/stable/).
+=======
+This is a readme file (DO NOT READ ME)
+>>>>>>> ffa0e90970a570919c7ea99c30a794b786f7897f
