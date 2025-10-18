@@ -1,11 +1,15 @@
-import { SupportedWallet, WalletId, WalletManager, WalletProvider } from '@txnlab/use-wallet-react'
-import { SnackbarProvider } from 'notistack'
-import Home from './Home'
-import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
+import { SupportedWallet, WalletId, WalletManager, WalletProvider } from "@txnlab/use-wallet-react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
+import Home from "./Home";
+import Client from "./Client";
+import Business from "./Business";
+import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from "./utils/network/getAlgoClientConfigs";
 
-let supportedWallets: SupportedWallet[]
-if (import.meta.env.VITE_ALGOD_NETWORK === 'localnet') {
-  const kmdConfig = getKmdConfigFromViteEnvironment()
+let supportedWallets: SupportedWallet[];
+
+if (import.meta.env.VITE_ALGOD_NETWORK === "localnet") {
+  const kmdConfig = getKmdConfigFromViteEnvironment();
   supportedWallets = [
     {
       id: WalletId.KMD,
@@ -15,19 +19,14 @@ if (import.meta.env.VITE_ALGOD_NETWORK === 'localnet') {
         port: String(kmdConfig.port),
       },
     },
-  ]
+  ];
 } else {
-  supportedWallets = [
-    { id: WalletId.DEFLY },
-    { id: WalletId.PERA },
-    { id: WalletId.EXODUS },
-    // If you are interested in WalletConnect v2 provider
-    // refer to https://github.com/TxnLab/use-wallet for detailed integration instructions
-  ]
+  supportedWallets = [{ id: WalletId.DEFLY }, { id: WalletId.PERA }, { id: WalletId.EXODUS }];
 }
 
 export default function App() {
-  const algodConfig = getAlgodConfigFromViteEnvironment()
+  // 👇 define the wallet manager here
+  const algodConfig = getAlgodConfigFromViteEnvironment();
 
   const walletManager = new WalletManager({
     wallets: supportedWallets,
@@ -44,13 +43,19 @@ export default function App() {
     options: {
       resetNetwork: true,
     },
-  })
+  });
 
   return (
     <SnackbarProvider maxSnack={3}>
       <WalletProvider manager={walletManager}>
-        <Home />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/client" element={<Client />} />
+            <Route path="/business" element={<Business />} />
+          </Routes>
+        </Router>
       </WalletProvider>
     </SnackbarProvider>
-  )
+  );
 }
