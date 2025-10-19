@@ -77,7 +77,7 @@ Hand-off for teammates:
 * Replace demo signing with a real attestor. Provide attestor pubkey to the contract.
 * If using a backend, expose a `/sign-score-latest` that returns `{score, modelHashHex, artifactHashHex, ts, sigB64}`. The frontend already accepts that shape.
 
-
+[▶️ Watch demo video](2025-10-19%2011-55-01.mp4)
 
 
 This starter full stack project has been generated using AlgoKit. See below for default getting started instructions.
