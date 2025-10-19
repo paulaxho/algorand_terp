@@ -43,3 +43,7 @@ The frontend starter also provides an example of interactions with your ScoreCli
 ## Next Steps
 
 You can take this project and customize it to build your own decentralized applications on Algorand. Make sure to understand how to use AlgoKit and how to write smart contracts for Algorand before you start.
+
+
+# Canva Slide
+https://www.canva.com/design/DAG2Otx34MU/_5wJ5cq1RReLeMzJ2cFRhA/view?utm_content=DAG2Otx34MU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfb1947ce53
