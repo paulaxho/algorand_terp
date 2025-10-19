@@ -25,7 +25,6 @@ if (import.meta.env.VITE_ALGOD_NETWORK === "localnet") {
 }
 
 export default function App() {
-  // 👇 define the wallet manager here
   const algodConfig = getAlgodConfigFromViteEnvironment();
 
   const walletManager = new WalletManager({
