@@ -1,4 +1,4 @@
-# pip install fastapi uvicorn[standard] numpy pandas pynacl python-dotenv py-algorand-sdk
+# pip install "uvicorn[standard]" fastapi numpy pandas pynacl python-dotenv py-algorand-sdk
 # run: uvicorn fort_scoring_api:app --host 0.0.0.0 --port 8000
 import os, time, json, base64, hashlib, glob
 from typing import Dict, Any, Tuple
